@@ -55,15 +55,14 @@ def parseargs(command, argv):
             argv[i] = True
         elif argv[i].lower() == "false":
             argv[i] = False
-        try:
+        elif argv[i].isnumeric():
             f = int(argv[i])
             argv[i] = f
+        try:
+            f = float(argv[i])
+            argv[i] = f
         except:
-            try:
-                f = float(argv[i])
-                argv[i] = f
-            except:
-                pass
+            pass
         output[a] = argv[i]
     return output
 

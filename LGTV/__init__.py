@@ -52,8 +52,10 @@ def parseargs(command, argv):
     output = {}
     for (i, a) in enumerate(args):
         if command == "setTVChannel":
-            output[a] = argv[i]
+            output[a] = '' + argv[i]
+            print ('== [setTVChannel] == ' + output[a])
             continue
+            
         if argv[i].lower() == "true":
             argv[i] = True
         elif argv[i].lower() == "false":
